@@ -1,44 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+  .hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+  }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lightweight Analog Clock</title>
-  <style>
-    .clock {
-      width: 200px;
-      height: 200px;
-      border: 2px solid #333;
-      border-radius: 50%;
-      position: relative;
-    }
+  .hour {
+    width: 6px;
+    height: 60px;
+    background: #333;
+  }
 
-    .hand {
-      position: absolute;
-      bottom: 50%;
-      left: 50%;
-      transform-origin: 50% 100%;
-    }
+  .minute {
+    width: 4px;
+    height: 80px;
+    background: #666;
+  }
 
-    .hour {
-      width: 6px;
-      height: 60px;
-      background: #333;
-    }
-
-    .minute {
-      width: 4px;
-      height: 80px;
-      background: #666;
-    }
-
-    .second {
-      width: 2px;
-      height: 90px;
-      background: #f00;
-    }
-  </style>
+  .second {
+    width: 2px;
+    height: 90px;
+    background: #f00;
+  }
+</style>
 </head>
 
 <body>
@@ -68,6 +53,3 @@
 
     updateClock();
   </script>
-</body>
-
-</html>
