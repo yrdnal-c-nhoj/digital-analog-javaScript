@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lightweight Analog Clock</title>
+  <style>
+    .clock {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #333;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .hand {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform-origin: 50% 100%;
+    }
+
+    .hour {
+      width: 6px;
+      height: 60px;
+      background: #333;
+    }
+
+    .minute {
+      width: 4px;
+      height: 80px;
+      background: #666;
+    }
+
+    .second {
+      width: 2px;
+      height: 90px;
+      background: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="clock">
+    <div class="hand hour"></div>
+    <div class="hand minute"></div>
+    <div class="hand second"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const seconds = now.getSeconds() / 60;
+      const minutes = (now.getMinutes() + seconds) / 60;
+      const hours = (now.getHours() % 12 + minutes) / 12;
+
+      setRotation(document.querySelector('.hour'), hours);
+      setRotation(document.querySelector('.minute'), minutes);
+      setRotation(document.querySelector('.second'), seconds);
+
+      requestAnimationFrame(updateClock);
+    }
+
+    function setRotation(element, rotation) {
+      element.style.transform = `translateX(-50%) rotate(${rotation * 360}deg)`;
+    }
+
+    updateClock();
+  </script>
+</body>
+
+</html>
