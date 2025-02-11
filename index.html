@@ -8,51 +8,95 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/mobile.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <title>Digital And Analog Clocks With JavaScript (jQuery) Example</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .clock {
+      position: relative;
+    }
+
+    .hour {
+      width: 8px;
+      height: 80px;
+      background: rgb(69, 46, 139);
+    }
+
+    .minute {
+      width: 5px;
+      height: 110px;
+      background: #333;
+    }
+
+    .second {
+      width: 2px;
+      height: 130px;
+      background: rgb(252, 40, 157);
+    }
+  </style>
 </head>
 
 <body onload="initClock()">
-  <div class="nav">
-    <div class="btn">
-      <button class="dig" onclick="digital()">Digital clock</button>
-      <button class="analog" onclick="analog()">Analog Clock</button>
-    </div>
-  </div>
+
   <div class="clock">
     <div class="hour">
       <div class="hor" id="hor">
-
       </div>
     </div>
     <div class="minutes">
       <div class="mn" id="mn">
-
       </div>
     </div>
     <div class="seconds">
       <div class="sc" id="sc">
-
       </div>
     </div>
   </div>
-  <div class="datetime">
-    <div class="date">
-      <span id="day">Day</span>,
-      <span id="month">Month</span>
-      <span id="num">00</span>,
-      <span id="year">Year</span>
-    </div>
-    <div class="time">
-      <span id="hour">00</span>:
-      <span id="min">00</span>:
-      <span id="sec">00</span>
-      <span id="period">AM</span>
-    </div>
-  </div>
-  <script src="js/clock.js"></script>
-  <script src="js/digital.js"></script>
 
 </body>
+
+<script>
+
+  const deg = 6;
+  const hor = document.querySelector('#hor');
+  const mn = document.querySelector('#mn');
+  const sc = document.querySelector('#sc');
+
+
+  setInterval(() => {
+    let day = new Date();
+    let hh = day.getHours() * 30;
+    let mm = day.getMinutes() * deg;
+    let ss = day.getSeconds() * deg;
+
+    hor.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
+    mn.style.transform = `rotateZ(${mm}deg)`;
+    sc.style.transform = `rotateZ(${ss}deg)`;
+  });
+
+  $(document).ready(function () {
+    $(".datetime").hide();
+    $(".dig").click(function () {
+      $(".clock").hide();
+      $(".datetime").show();
+    });
+    $(".analog").click(function () {
+      $(".datetime").hide();
+      $(".clock").show();
+    });
+  });
+</script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

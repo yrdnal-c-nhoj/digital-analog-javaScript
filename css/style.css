@@ -1,28 +1,32 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background:#10101E;
-     min-height: 100vh;
-     overflow:hidden ;
+
+body {
+    background: #10101E;
+    min-height: 100vh;
+    overflow: hidden;
 
 }
-.nav{
+
+.nav {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     margin-top: 3%;
     padding: 15px;
 }
-h1{
+
+h1 {
     font-family: sans-serif;
     margin-left: 10px;
     color: seagreen;
     font-size: 45px;
 }
-.dig, .analog{
+
+.analog {
     height: 42px;
     align-self: center;
     margin-left: 2em;
@@ -32,15 +36,17 @@ h1{
     cursor: pointer;
     transition: 0.3s ease all;
 }
-button:hover{
-    background:rgb(57, 138, 243) ;
+
+button:hover {
+    background: rgb(57, 138, 243);
     box-shadow: 0 0 30px rgb(57, 138, 243);
     color: #fff;
 }
-.clock{
+
+.clock {
     width: 420px;
     height: 420px;
-    margin:0 auto;
+    margin: 0 auto;
     margin-top: 5%;
     display: flex;
     justify-content: center;
@@ -49,13 +55,14 @@ button:hover{
     background-size: cover;
     border: 4px solid seagreen;
     border-radius: 50%;
-    box-shadow: 0 -15px 15px rgba(255,255,255, 0.05),
-                inset 0 -15px 15px rgba(255,255,255, 0.05),
-                0 15px 15px rgba(0, 0, 0, 0.3),
-                inset 0 15px 15px rgba(0, 0, 0, 0.3);
-    
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+        inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+        0 15px 15px rgba(0, 0, 0, 0.3),
+        inset 0 15px 15px rgba(0, 0, 0, 0.3);
+
 }
-.clock:before{
+
+.clock:before {
     content: '';
     position: absolute;
     width: 15px;
@@ -64,31 +71,44 @@ button:hover{
     border-radius: 50%;
     z-index: 10000;
 }
-.clock .hour, .clock .minutes, .clock .seconds{
+
+.clock .hour,
+.clock .minutes,
+.clock .seconds {
     position: absolute;
 
 }
-.clock .hour, .hor{
+
+.clock .hour,
+.hor {
     width: 160px;
     height: 160px;
 
 }
-.clock .minutes, .mn{
+
+.clock .minutes,
+.mn {
     width: 190px;
     height: 230px;
-    
+
 }
-.clock .seconds, .sc{
+
+.clock .seconds,
+.sc {
     width: 230px;
     height: 230px;
 }
-.hor, .mn, .sc{
+
+.hor,
+.mn,
+.sc {
     display: flex;
     justify-content: center;
     position: absolute;
     border-radius: 50%;
 }
-.hor:before{
+
+.hor:before {
     content: '';
     position: absolute;
     width: 8px;
@@ -97,7 +117,8 @@ button:hover{
     z-index: 10;
     border-radius: 6px 6px 0 0;
 }
-.mn:before{
+
+.mn:before {
     content: '';
     position: absolute;
     width: 5px;
@@ -106,48 +127,54 @@ button:hover{
     z-index: 11;
     border-radius: 6px 6px 0 0;
 }
-.sc:before{
+
+.sc:before {
     content: '';
     position: absolute;
     width: 2px;
     height: 150px;
-    background:rgb(252, 40, 86);
+    background: rgb(252, 40, 86);
     z-index: 12;
     border-radius: 6px 6px 0 0;
 }
-.datetime{
-    margin:0 auto;
+
+.datetime {
+    margin: 0 auto;
     margin-top: 15%;
     color: #fff;
-    background:seagreen ;
+    background: seagreen;
     font-family: "Segoe UI", sans-serif;
     width: 410px;
     padding: 15px 10px;
     border: 3px solid seagreen;
     border-radius: 5px;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(255,255,255, 0.1));
+    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(255, 255, 255, 0.1));
     box-shadow: 0 0 30px seagreen;
 }
-.date{
+
+.date {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
     letter-spacing: 3px;
 }
-.time{
+
+.time {
     font-size: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.time span:not(:last-child){
+
+.time span:not(:last-child) {
     position: relative;
     margin: 0 6px;
     font-weight: 600;
     text-align: center;
     letter-spacing: 3px;
 }
-.time span:last-child{
+
+.time span:last-child {
     background: seagreen;
     font-size: 30px;
     font-weight: 600;
